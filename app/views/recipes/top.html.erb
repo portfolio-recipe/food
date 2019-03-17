@@ -1,0 +1,30 @@
+<%= render 'users/header' ,user:@user %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>レシピ一覧</h1>
+          <tbody class="recipe">
+            <tr>
+              <tb class="image_recipe">
+                <%=attachment_image_tag recipe, :image, :fill,50,50, format: 'jpeg', size: "50x50", fallback: "/images/no-image.jpg" %>
+              </tb>
+
+              <tb class="title_recipe">
+              	<%= recipe.title %>
+              </tb>
+
+            </tr>
+          </tbody>
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+<%= render 'users/footer' ,user:@user %>
