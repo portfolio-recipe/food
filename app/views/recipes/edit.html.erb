@@ -1,0 +1,21 @@
+<%= render 'users/header' ,user:@user %>
+<div class="container">
+  <div class="row">
+  	<div class="col-xs-12">
+      <h3>レシピ編集</h3>
+    </div>
+      <%= form_for (@recipe) do |f| %>
+        <div class="col-xs-7">
+          <%= attachment_image_tag @recipe, :recipe_image, :fill,100,100,format: 'jpg', size: "320x280",fallback:"no_image.png" %>
+        </div>
+        <div class="col-xs-5">
+          <%= render 'recipes/form' ,recipe:@recipe %>
+        </div>
+        <div class="row">
+          <div class=col-xs-12>
+            <%= f.text_field :title %>
+            <%= f.submit '保存' %>
+          </div>
+        </div>
+
+<% end %>

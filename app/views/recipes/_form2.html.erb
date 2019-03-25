@@ -1,0 +1,22 @@
+<%#= form_for recipe do |f| %>
+ <!-- <div class="add_form"> -->
+  <!-- <div class="field"> -->
+    <!-- <%#= f.label :title %> -->
+    <!-- <%#= f.text_field :title, required: true %> -->
+  <!-- </div> -->
+
+     <!-- <label></label> -->
+     <!-- <div class="add_stroke"> -->
+       <%#= f.fields_for :recipe_items do |recipe_item| %>
+         <%#= render 'stroke_fields', f: recipe_item %>
+       <%# end %>
+      <!-- <div class="links"> -->
+        <%#= link_to_add_association "行を追加する", f, :recipe_items, class: "btn btn-success  btn" %>
+      <!-- </div> -->
+    <!-- </div> -->
+         <%#= render 'stroke_fields', f: recipe_item %>
+         <%# end %>
+    <%#= f.submit '投稿'%>
+<%# end %>
+ <!-- <div class="add_form"> -->
+

@@ -1,9 +1,30 @@
 <header>
-  <h3>タイトル</h3>
+  <div class="header">
+	<%= link_to"タイトル" ,root_path %>
+  </div>
 
-  <div style="text-align: right; margin: 0px 40px 0px 0px;">
-    <%= link_to "会員登録" ,new_user_registration_path    %>
-      &nbsp &nbsp
-    <%= link_to "ログイン" ,new_user_session_path %>
+  <div class="search">
+    <%= form_tag :search_recipes, :method =>'get' do %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "検索", :title => nil %>
+    <% end %>
+  </div>
+
+  <div class="not-sign-in-header">
+    <%if current_user %>
+      <%=current_user.name %>
+         <%= link_to "マイページ" ,user_path(current_user.id) %>
+          | <%=link_to "ログアウト", destroy_user_session_path, method: :delete %>
+
+          | <%= link_to "レシピ投稿" ,new_recipe_path %>
+
+    <%else%>
+
+      <%= link_to "会員登録" ,new_user_registration_path %>
+        &nbsp &nbsp
+      <%= link_to "ログイン" ,new_user_session_path %>
+
+  <% end %>
+
   </div>
 </header>

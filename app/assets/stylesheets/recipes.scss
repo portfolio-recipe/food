@@ -1,3 +1,36 @@
 // Place all the styles related to the recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.flex-container {
+  display: inline-flex;
+ /*float: center;*/
+  margin: 40px 0px 40px 115px;
+}
+
+.title-dispray {
+	float:left;
+}
+
+.recipe_image {
+	float: left;
+}
+
+.new_recipe {
+  	float: center;
+  	margin-left: 30px;
+}
+
+.btn {
+	float: right;
+}
+
+.field {
+	margin-top: 7px;
+	margin-left: 600px;
+}
+
+.add_form {
+	float: left;
+}
+
