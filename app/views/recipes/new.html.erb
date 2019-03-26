@@ -4,20 +4,9 @@
   <div class="row">
     <div class="col-xs-12">
       <h3> レシピ投稿</h3>
-       <%= attachment_image_tag @recipe, :recipe_image, :fill,100,100,format: 'jpg', size: "320x280",fallback:"no_image.png" %>
-        <%= form_for (@recipe) do |f| %>
-          <div class="recipe_image">
-            <%= f.attachment_field :recipe_image %>
-            <%= f.label :レシピ名　%>
-            <%= f.text_field :title %>
-            <%= f.submit '保存' %>
-          </div>
-        <% end %>
-
-
-          <div class ="seasoning">
+          <!-- <div class ="seasoning"> -->
             <%= render 'recipes/form' , recipe:@recipe %>
-          </div>
+          <!-- </div> -->
           <div class="add_atroke">
           	<%= render 'recipes/form2' ,recipe:@recipe %>
           </div>

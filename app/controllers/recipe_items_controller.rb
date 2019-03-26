@@ -7,6 +7,6 @@ class RecipeItemsController < ApplicationController
 private
 
   def recipe_item
-  	prams.reqire(:recipe_item).permit(:neme)
+  	prams.reqire(:recipe_item).permit(:seasoning, :stloke_image)
 
 end
