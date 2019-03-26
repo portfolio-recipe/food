@@ -21,12 +21,12 @@ class RecipesController < ApplicationController
   end
 
   def top
-  	@recipes =Recipe.all
+  	@recipes = Recipe.page(params[:page]).per(9)
   end
 
   def create
   	@recipe = Recipe.new(recipe_params)
-  	binding.pry
+  	#binding.pry
   	@recipe.user_id = current_user.id
   	@recipe.save
   	redirect_to root_path
@@ -39,6 +39,7 @@ class RecipesController < ApplicationController
   def update
   	recipe = Recipe.find(params[:id])
     recipe.update(recipe_params)
+    redirect_to root_path
   end
 
   def destroy
@@ -50,6 +51,6 @@ class RecipesController < ApplicationController
 private
 
   def recipe_params
- 	params.require(:recipe).permit(:title, :recipe_image)#, recipe_items_attributes:[:id, :seasoning, :_destroy])
+ 	params.require(:recipe).permit(:title, :recipe_image, recipe_items_attributes:[:id, :seasoning, :stroke_image, :_destroy][])
   end
 end

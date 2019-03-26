@@ -3,9 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .flex-container {
-  display: inline-flex;
- /*float: center;*/
+  float:left;
   margin: 40px 0px 40px 115px;
+}
+
+.nested-fields {
+	float: center;
 }
 
 .title-dispray {
@@ -22,15 +25,24 @@
 }
 
 .btn {
-	float: right;
+	/*float: right;*/
 }
 
 .field {
 	margin-top: 7px;
-	margin-left: 600px;
+	margin-left: 700px;
 }
 
 .add_form {
 	float: left;
 }
 
+.stroke_field {
+	/*float: right;*/
+	margin-left:600px;
+}
+
+.dispray_image {
+	float: left;
+	display: grid;
+}

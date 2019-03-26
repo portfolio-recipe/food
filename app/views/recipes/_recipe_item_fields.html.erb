@@ -1,11 +1,9 @@
-<div class="nested-fields">
-  <div class="field">
-    <%= f.label :材料 %>
-    </br>
-    <%= f.file_field :recipe_item_image, class: 'file_field' %>
-    <%= f.text_field :seasoning, required: true %>
+<div class="rhite_field">
+  <div class="nested-fields">
+      <%= f.label :材料 %>
+      <%= f.file_field :stroke_image, class: 'file_field' %>
+      <%= f.text_field :seasoning, required: true %>
+      <%= link_to_remove_association "✖", f, class: "btn btn-danger delete_btn" %>
   </div>
-  <%= link_to_remove_association "✖", f, class: "btn btn-danger delete_btn" %>
 </div>
-
 

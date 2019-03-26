@@ -7,6 +7,8 @@ attachment :recipe_image
 
 accepts_nested_attributes_for :recipe_items, allow_destroy: true
 
+  default_scope -> {order(id: :desc)}
+
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end
