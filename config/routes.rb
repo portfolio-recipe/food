@@ -1,11 +1,19 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  get "users/:id" => "recipe#top", as: :top
-  get '/' =>'recipes#top'
+
+  root 'recipes#top'
+
+  get 'users/:id/edit' => 'users#edit', as: 'edit_user'
 
 resources :users
-resources :recipes
-resources :favorites
+
+resources :recipes do
+	get "search", on: :collection
+resources :recipe_items
+resources :favorites,only:[:create,:destroy]
+end
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

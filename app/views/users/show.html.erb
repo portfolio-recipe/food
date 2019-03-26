@@ -1,0 +1,16 @@
+
+<%= render 'users/header' ,user:@user %>
+<div class="container">
+ <div> <h1>マイページ</h1></div>
+   <div class="row">
+     <div class="col-sm-3">
+       <div> <%= attachment_image_tag @user, :image, :fill,100,100, format: 'jpeg', size: "200x200", fallback: "no_image.png" %></div>
+	     <div>
+	   	   <div> <%= @user.name %></div>
+		     <%= link_to "編集",edit_user_path(@user.id), class: "btn btn-success edit_btn" %>
+
+		     <%= link_to "退会", user_registration_path,method: :delete, class: "btn btn-danger delete_btn" %>
+         </div>
+     </div>
+   </div>
+</div>

@@ -1,2 +1,40 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<%= render 'users/header' ,user:@user %>
+  <div id="st-container" class="st-container">
+    <div class="st-pusher">
+      <div class="st-content">
+        <div class="st-content-inner">      
+          <section class="slice slice-lg sct-color-1">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                  <div class="form-user style-1 rounded has-shadow-1">
+                    <div class="form-header text-center">
+                      <h2 class="form-header-title">プロフィール編集</h2>
+                    </div>
+                  <div class="form-body">
+                    <%= form_for(@user) do |f| %>
+                    <div class="form-group has-icon">
+                      <label class="control-label sr-only" for="inputEmail">Name</label>
+                        <%= f.text_field :name, autofocus: true, class:"form-control", id:"inputEmail", placeholder:"名前"%>
+                          <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "メールアドレス", class: "form-control" %>
+                          <div class="form-group has-icon">
+                          <div class="user-edit-image">
+                            <%= attachment_image_tag @user, :image, :fill, 60, 60, size: "200x200", class: "jpeg", fallback: "no_image.png"%>
+                          </div>
+                          <label class="control-label sr-only" for="inputEmail">ProfileImage</label>
+                          <%= f.attachment_field :image, placeholder: "プロフィール画像" %>
+                        </div>
+                        </div>
+                        <%= f.submit "保存" %>
+                    <% end %>
+                    </div>
+                  </div> 
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
