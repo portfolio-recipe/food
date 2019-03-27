@@ -1,13 +1,15 @@
 class RecipesController < ApplicationController
   
    def index
-  	 @recipes = Recipe.all
-  	 @search = Recipe.search(params[:q])
-  render "index"
+   recipe_favorite_count = Recipe.joins(:favorites).group(:recipe_id).count
+   recipe_favorite_ids = Hash[recipe_favorite_count.sort_by{ |_, v| -v}].keys
+   @recipe_ranking = Recipe.where(id: recipe_favorite_ids)
+   @recipes = Recipe.page(params[:page]).per(9)
    end
 
   def search
   @recipes = Recipe.search(params[:search])
+  @recipes = Recipe.page(params[:page]).per(9)
   render "top"
   end
 

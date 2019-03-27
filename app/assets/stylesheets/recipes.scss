@@ -4,7 +4,7 @@
 
 .flex-container {
   float:left;
-  margin: 40px 0px 40px 115px;
+  margin: 40px 0px 10px 115px;
 }
 
 .nested-fields {
@@ -45,4 +45,8 @@
 .dispray_image {
 	float: left;
 	display: grid;
+}
+
+.recipe_image_select {
+	float: none;
 }

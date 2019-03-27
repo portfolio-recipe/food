@@ -1,18 +1,23 @@
 <%= render 'users/header' ,user:@user %>
-<div><h3>投稿一覧</h3></div>
   <div class="container">
     <div class="row">
-        <% @recipes.each do |recipe| %>
-             <!-- <div class="col-md-4"> -->
-          <table>
-            <tbody>
-              <tr>  <%= attachment_image_tag @recipe, :recipe_image, :fill,100,100,format: 'jpg', size: "200x200",fallback:"no_image.png" %></tr>
-              <tr> <%= recipe.title %></tr>
-            </tbody>
-          </table>
+         <ul class="nav nav-tabs nav-justified">
+           <li role="presentation"><a href="/">新着</a></li>
+           <li role="presentation"><a href="/recipes">ランキング</a></li>
+          </ul>
+
+      <% @recipe_ranking.each do |recipe_ranking| %>
+              <div class="flex-container"><div>
+              	<%#= recipe_favorites_count %>
+              	<%= link_to recipe_path (recipe_ranking) do %>
+                <%= attachment_image_tag recipe_ranking, :recipe_image, :fill,250,250,format: 'jpg', size: "250x250",fallback:"no_image.png" %>
+              <% end %></div>
+                    <h4><%= recipe_ranking.title %></h4>
+              </div>
         <% end %>
+         <div style="text-align: center;"><%= paginate @recipes %></div>
       </div>
-  </div>
+   </div>
  </div>
 
 <%= render 'users/footer' ,user:@user %>

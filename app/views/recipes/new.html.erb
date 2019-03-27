@@ -1,17 +1,9 @@
 <%= render 'users/header' ,user:@user %>
 
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12">
+
       <h3> レシピ投稿</h3>
-          <!-- <div class ="seasoning"> -->
             <%= render 'recipes/form' , recipe:@recipe %>
-          <!-- </div> -->
-          <div class="add_atroke">
-          	<%= render 'recipes/form2' ,recipe:@recipe %>
-          </div>
-    </div>
-  </div>
-</div>
+          	<%#= render 'recipes/form2' ,recipe:@recipe %>
 
 
