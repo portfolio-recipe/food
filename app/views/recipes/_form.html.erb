@@ -1,22 +1,26 @@
 <%= form_for recipe do |f| %>
-  <div class="recipe_image">
-    <%= attachment_image_tag @recipe, :recipe_image, :fill,420,380,format: 'jpg', size: "420x380",fallback:"no_image.png" %>
-    <%= f.attachment_field :recipe_image %>
-    <%= f.label :レシピ名　%>
-    <%= f.text_field :title %>
-    <%= f.submit '投稿' %>
-    <%#= f.submit '保存' %>
+  <div class="container_left">
+    <div>
+      <%= attachment_image_tag @recipe, :recipe_image, :fill,420,380,format: 'jpg', size: "420x380",fallback:"no_image.png" %>
+    </div>
+    <div class="recipe_image_select">
+      <%= f.attachment_field :recipe_image %>
+      <%= f.text_field :title %>
+      <%= f.submit '投稿' %>
+    </div>
+      <%#= f.label :レシピ名　%>
+     <%#= f.submit '保存' %>
   </div>
 
   <%= f.fields_for :recipe_items do |recipe_item| %>
     <%= render 'recipe_item_fields', f: recipe_item %>
   <% end %>
     <div class="rhite_field">
-      <div class="links">
+      <!-- <div class="links"> -->
       <%= link_to_add_association "行を追加する", f, :recipe_items, class: "btn btn-success  btn" %>
-      </div>
+      <!-- </div> -->
     </div>
          <%#= render 'stroke_fields', f: recipe_item %>
          <%# end %>
-  <% end %>
+<% end %>
 
