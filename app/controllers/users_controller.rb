@@ -6,6 +6,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @recipes = Recipe.where(user_id: @user.id)
+    @recipes = Kaminari.paginate_array(@recipes).page(params[:page]).per(9)
   end
 
   def edit

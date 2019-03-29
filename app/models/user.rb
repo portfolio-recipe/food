@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   attachment :image
 
-  has_many :favorite, dependent: :destroy
-  has_many :recipe, dependent: :destroy, through: :favorites
+  has_many :favorites, dependent: :destroy
+  has_many :recipes, dependent: :destroy, through: :favorites
 
 end

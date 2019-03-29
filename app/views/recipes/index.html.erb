@@ -5,6 +5,7 @@
            <li role="presentation"><a href="/">新着</a></li>
            <li role="presentation"><a href="/recipes">ランキング</a></li>
           </ul>
+<div class="flex">
 
       <% @recipe_ranking.each do |recipe_ranking| %>
               <div class="flex-container"><div>
@@ -15,6 +16,7 @@
                     <h4><%= recipe_ranking.title %></h4>
               </div>
         <% end %>
+        </div>
          <div style="text-align: center;"><%= paginate @recipes %></div>
       </div>
    </div>

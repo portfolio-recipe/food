@@ -3,11 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .flex-container {
-  float:left;
-  margin: 40px 0px 10px 115px;
+  width: 25%;
+  margin: 30px 33px 35px 60px;
 }
 
-.nested-fields {
+.flex{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/*.nested-fields {
 	float: center;
 }
 
@@ -26,20 +31,19 @@
 
 .btn {
 	/*float: right;*/
-}
+/*}*/
 
-.field {
+/*.field {
 	margin-top: 7px;
 	margin-left: 700px;
 }
-
-.add_form {
+*/
+/*.add_form {
 	float: left;
 }
-
+*/
 .stroke_field {
-	/*float: right;*/
-	margin-left:600px;
+	margin: 20px 0px 0px 650px;
 }
 
 .dispray_image {
@@ -47,6 +51,3 @@
 	display: grid;
 }
 
-.recipe_image_select {
-	float: none;
-}

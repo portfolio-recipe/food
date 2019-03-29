@@ -7,11 +7,11 @@ class RecipesController < ApplicationController
    @recipes = Recipe.page(params[:page]).per(9)
    end
 
-  def search
-  @recipes = Recipe.search(params[:search])
-  @recipes = Recipe.page(params[:page]).per(9)
-  render "top"
-  end
+  # def search
+  # @recipes = Recipe.search(params[:search])
+  # @recipes = Recipe.page(params[:page]).per(9)
+  # render "top"
+  # end
 
   def show
     @recipe = Recipe.find(params[:id])
@@ -23,8 +23,14 @@ class RecipesController < ApplicationController
   end
 
   def top
-  	@recipes = Recipe.page(params[:page]).per(9)
+    if params[:search]
+      @recipes = Recipe.search(params[:search])
+      @recipes = Kaminari.paginate_array(@recipes).page(params[:page]).per(9)
+    else
+      @recipes = Recipe.page(params[:page]).per(9)
+    end
   end
+
 
   def create
   	@recipe = Recipe.new(recipe_params)
@@ -53,6 +59,6 @@ class RecipesController < ApplicationController
 private
 
   def recipe_params
- 	params.require(:recipe).permit(:title, :recipe_image, recipe_items_attributes:[:id, :seasoning, :stroke_image, :_destroy][])
+ 	params.require(:recipe).permit(:title, :recipe_image, recipe_items_attributes:[:id, :seasoning, :stroke_image, :_destroy])
   end
 end
