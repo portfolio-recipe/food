@@ -335,7 +335,7 @@ DEPENDENCIES
   refile!
   refile-mini_magick
   sass-rails (~> 5.0)
-  seed-fu (~> 2.3)
+  seed-fu
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
