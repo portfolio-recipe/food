@@ -1,5 +1,5 @@
-<%= render 'users/header' ,user:@user %>
-<div class="col-sm-4">
+<%#= render 'users/header' ,user:@user %>
+<!-- <div class="col-sm-4">
   <div class="user-index-title"><h1>ユーザー 一覧</h1></div>
 </div>
 
@@ -13,19 +13,19 @@
 		<th class="edit_index_display">編集</th>
 		<th class="delete_index_display">削除</th>
 	  </tr>
-	</thead>
-	<% @user.each do |user| %>
-	  <tbody class="taikai">
+	</thead> -->
+	<%# @user.each do |user| %>
+	<!--   <tbody class="taikai">
 		<tr>
-			<td class="image_index_display"><%= attachment_image_tag user, :image, :fill,50,50, format: 'jpeg', size: "50x50", fallback: "/images/no-image.png" %>
+			<td class="image_index_display"><%#= attachment_image_tag user, :image, :fill,50,50, format: 'jpeg', size: "50x50", fallback: "/images/no-image.png" %>
 		    </td>
-			<td class="name_index_display"><%= user.name %></td>
+			<td class="name_index_display"><%#= user.name %></td>
 
 			<td class="email_index_diespla"><%= user.email %></td>
 
-			<td class="edit_index_display"><%= link_to "編集",edit_user_path(user.id), class: "btn btn-success  btn-xs" %></td>
-			<td class="delete_index_display"><%= link_to "削除", root_path, method: :delete, date: { confirm: "本当に削除しますか？"}, class: "btn btn-danger" %></td>
+			<td class="edit_index_display"><%#= link_to "編集",edit_user_path(user.id), class: "btn btn-success  btn-xs" %></td>
+			<td class="delete_index_display"><%=# link_to "削除", root_path, method: :delete, date: { confirm: "本当に削除しますか？"}, class: "btn btn-danger" %></td>
 		</tr>
 	</tbody>
-	<% end %>
-</table>
+	<% #end %>
+</table> -->

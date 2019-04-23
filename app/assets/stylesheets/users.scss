@@ -17,9 +17,15 @@ header {
 	border-style: outset;
 }
 
+.header {
+	font-size: 40px;
+	float: left;
+}
+
 .search {
-	margin: 0px 0px 0px 450px;
+	margin: 0px 20px 0px 450px;
 	display: block;
+	margin-top: 30px;
 }
 
 .not-sign-in-header {

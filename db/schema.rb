@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_29_185254) do
+ActiveRecord::Schema.define(version: 2019_04_01_055638) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "recipe_id"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_03_29_185254) do
     t.integer "user_id"
     t.integer "recipe_id"
     t.string "seasoning"
+    t.text "stroke_image_id"
   end
 
   create_table "recipes", force: :cascade do |t|
